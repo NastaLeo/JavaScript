@@ -3,6 +3,8 @@
 //но без дублирующихся по своим значениям элементам. Использовать методы reduce и indexOf.
 
 let arr = [1, 2, 3, 4, 4, 5, 2, 9, 4];
+let arrUnique = [];
+arr.forEach((element) => {if (!arrUnique.includes(element)) {arrUnique.push(element)
+}});
+console.log(arrUnique)
 
-
-let arrUnique;

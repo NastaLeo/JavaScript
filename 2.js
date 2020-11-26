@@ -17,4 +17,5 @@ let users = [
     {id: 12, name: "Денис", age: 20},
  ];
 
- let usersAfterYear = users.map((user, age) => user.age = age[i] + 1);
+ users.forEach(user => user.age += 1);
+ let usersAfterYear = users.filter((user) => user.age >= 18);
