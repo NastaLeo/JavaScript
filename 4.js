@@ -11,13 +11,12 @@ let users = {
     telephone: "samsung" 
 }
 
+//не работает
+// for(let value of Object.values(users)){
+//     value = (String(value)[0].toUpperCase() + String(value).slice(1));
+// }
+// console.log(users);
+
 let values = Object.values(users);
-for(let value of values) {
-    value = value[0].toUpperCase();
-}
-let strValues = values.join(',');
-
-
-let arrUpper = strValues.split(',').toUpperCase;
-
-String()[0].toUpperCase();
+let valuesUpper = values.map((value) => (value[0].toUpperCase() + value.slice(1)));
+//как вернуть в объект?

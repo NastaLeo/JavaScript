@@ -15,3 +15,16 @@ let usersAfterYear = [
     {id: 10, name: "Иван", age: 21},
     {id: 12, name: "Денис", age: 21},
  ];
+
+ // не работает usersAfterYearUniqueAge = usersAfterYear.reduce((unique, user) => {usersAfterYear.includes(user.age) ? unique : [...unique, user]}, 0);
+
+ // выводятся все значения в массив
+let usersAfterYearUniqueAge = [];
+    for (let user of usersAfterYear) {
+        if (!usersAfterYearUniqueAge.includes(user.age)) {
+        usersAfterYearUniqueAge.push(user.id, user.name, user.age);
+        }
+    }
+console.log(usersAfterYearUniqueAge);
+
+ 
