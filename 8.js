@@ -61,6 +61,7 @@ function format1() {
         }
     return date.toString() + '.' + month.toString()  + '.' + year.toString()
 };
+console.log(format1(today));
 
 function format2() {
         if (date < 10) {
@@ -77,6 +78,7 @@ function format2() {
         }
     return date.toString() + '.' + month.toString()  + '.' + year.toString() + ' ' + hours.toString() + ':' + minutes.toString()
 };
+console.log(format2(today));
 
 
 //Task 4
