@@ -54,10 +54,10 @@ console.log(minutes);
 
 function format1() {
         if (date < 10) {
-            date = 0 + date;
+            date = '0' + date;
         }
         if (month < 10) {
-            month = 0 + month;
+            month = '0' + month;
         }
     return date.toString() + '.' + month.toString()  + '.' + year.toString()
 };
@@ -65,16 +65,16 @@ console.log(format1(today));
 
 function format2() {
         if (date < 10) {
-            date = 0 + date;
+            date = '0' + date;
         }
         if (month < 10) {
-            month = 0 + month;
+            month = '0' + month;
         }
         if (hours < 10) {
-            hours = 0 + hours;
+            hours = '0' + hours;
         }
         if (minutes < 10) {
-            minites = 0 + minutes;
+            minutes = '0' + minutes;
         }
     return date.toString() + '.' + month.toString()  + '.' + year.toString() + ' ' + hours.toString() + ':' + minutes.toString()
 };
