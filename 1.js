@@ -69,15 +69,20 @@ let usersAfterYear = [
     {id: 12, name: "Денис", age: 21},
 ];
 
-// let usersAfterYearUniqueAge = usersAfterYear.reduce((unique, user) => {
-//     if user[age].indexOf() === -1 { 
-//         return unique.push(user);
-//     } else {
-//         return unique;
-//     }
-// }, []);
+let usersAfterUniqueAge = usersAfterYear.reduce((unique, user) => {
+                            let keys = Object.keys(usersAfterYear);
+                            (user[key]) {
+                                return unique.push(user);
+                            //   } else { 
+                            //     return unique.push(user);                                                       
+                            //   }
+                        }, 
+                            []);
 
-// return usersAfterYear.includes(user.age) ? unique : [...unique, user]
+let usersAfterUniqueAge = usersAfterYear.map(user => 
+                            
+                            return user;
+                            );
 
 
 //Task 4
