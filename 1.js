@@ -69,17 +69,16 @@ let usersAfterYear = [
     {id: 12, name: "Денис", age: 21},
 ];
 
-let usersAfterUniqueAge = usersAfterYear.reduce((unique, user) => {
-                           let key = Object.keys(user);
-                           console.log(key);
-                           let age = key[2];
-                           console.log(age);
-                           if (!unique.includes.key[age]) {
-                                return [...unique, user];
-                        } else {
-                            return unique;                                     
-                        }}, []);
 
+//findIndex is not a function??????
+let usersAfterUniqueAge = usersAfterYear.reduce((unique, user) => {
+                           let index = unique.findIndex(el => el.age = user.age);
+                            if (index === -1) {
+                                return unique.push(user);
+                            } else {
+                                return unique;                                     
+                            }
+                            }, []);
 
 //Task 4
 //Необходимо сделать так чтобы все значения полей объекта users начинались с заглавной буквы 
