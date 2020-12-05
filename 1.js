@@ -69,15 +69,11 @@ let usersAfterYear = [
     {id: 12, name: "Денис", age: 21},
 ];
 
-
-//findIndex is not a function??????
 let usersAfterUniqueAge = usersAfterYear.reduce((unique, user) => {
-                           let index = unique.findIndex(el => el.age = user.age);
+                           let index = unique.findIndex(el => el.age === user.age);
                             if (index === -1) {
-                                return unique.push(user);
-                            } else {
-                                return unique;                                     
-                            }
+                                unique.push(user);
+                            } return unique;                                     
                             }, []);
 
 //Task 4
