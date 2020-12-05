@@ -13,7 +13,7 @@ let user = {
 
 let {name: userName, years: userAge, car: userCar, ...userOtherInfo} = user;
 console.log(userName);
-console.log(userAge);
+console.log(userAge);g
 console.log(userCar);
 console.log(userOtherInfo);
 
@@ -42,7 +42,7 @@ console.log(today);
 
 let date = (today.getDate()).toString();
 console.log(date);
-let month = (today.getMonth()).toString();
+let month = (today.getMonth()+1).toString();
 console.log(month);
 let year = (today.getFullYear()).toString();
 console.log(year);
