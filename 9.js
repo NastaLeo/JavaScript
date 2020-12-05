@@ -24,23 +24,22 @@ function showIncreaseLet(){
     console.log(i);
     let intervalId = setInterval(() => {
        i += 1;
+      if (i === 20) {
+        clearInterval(intervalId)
+        } 
        console.log(i)}, 2000);
-    // if (i === 20) {
-    //     setTimeout(() => {clearInterval(intervalId)
-    //     }, 1000);    
-    //    }
 }
   
 //рекурсивный setTimeout
 let i = 0;
 function showIncreaseLet(){
     console.log(i);
-    setTimeout(() => {i += 1;
+   if (i < 20) {setTimeout(() => {i += 1;
     }, 2000);
-    setTimeout(showIncreaseLet, 2000)
-}
+     {setTimeout(showIncreaseLet, 2000);}
+}}
 
-            
+
 //Task3
 //Напишите функцию startTimer() которая будет запускать вывод через confirm("Реклама исчезнет счерез 5 секунд, 
 //вы согласны ?"),  при нажатии "ДА" вывоите alert("Реклама") через 5 секунд, если нажали "НЕТ", 
