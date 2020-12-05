@@ -13,9 +13,11 @@ let user = {
 
 let {name: userName, years: userAge, car: userCar, ...userOtherInfo} = user;
 console.log(userName);
-console.log(userAge);g
+console.log(userAge);
 console.log(userCar);
 console.log(userOtherInfo);
+
+
 
 //Task 2
 //Дан массив let arr = [1, "str", 24, {name: "Ivan"}, 89, undeifined, "10"]. 
@@ -30,6 +32,8 @@ console.log(firstElement);
 console.log(secondElement);
 console.log(fifthElement);
 console.log(otherElements);
+
+
 
 
 //Task 3
@@ -79,6 +83,8 @@ function format2() {
     return date.toString() + '.' + month.toString()  + '.' + year.toString() + ' ' + hours.toString() + ':' + minutes.toString()
 };
 console.log(format2(today));
+
+
 
 
 //Task 4
