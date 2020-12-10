@@ -35,8 +35,15 @@ console.log(secondUser);
 //в предыдущем задании. Функция должна выполнять вывод информации и не принимать аргументов. 
 //По сути нужно одну функцию привязать два объекта. 
 		
-function twoUsers(){
-    return {firstUser, secondUser};
+function userInfo(user){
+    console.group('Common info about user:');
+    console.log (`First-name is ${this.first_name}`);
+    console.log (`Second-name is ${this.second_name}`);
+    console.log (`Age is ${this.age}`);
+    console.log (`City is ${this.city}`);
+    console.groupEnd();
 }
 
+userInfo.bind(firstUser)();
+userInfo.bind(secondUser)();
 
