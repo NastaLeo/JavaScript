@@ -53,6 +53,7 @@ HouseBuilder.prototype.checkAreaFail = function() {
     alert('План по стройке не выполнен');
 }
 
-// не работает
-//askArea(totalAreaFirst, checkAreaSuccessfully.bind(firstHouse), checkAreaFail.bind(firstHouse))()
-//askArea(secondHouse.calcArea, secondHouse.checkAreaSuccessfully, secondHouse.checkAreaFail)()
+//for firstHouse
+askArea(totalAreaFirst, firstHouse.checkAreaSuccessfully, firstHouse.checkAreaFail)()
+//for secondHouse
+askArea(totalAreaSecond, secondHouse.checkAreaSuccessfully, secondHouse.checkAreaFail)()
