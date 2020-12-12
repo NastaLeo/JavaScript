@@ -50,7 +50,7 @@ function showIncreaseLet(){
 function startTimer(){
         let answer = confirm("Реклама исчезнет через 5 секунд, вы согласны ?", '');
         console.log(answer);
-            if (!!answer === true) {
+            if (answer) {
                 setTimeout(() => {alert('Реклама')           
                 }, 5000);
             } else { return startTimer();
@@ -61,12 +61,9 @@ function startTimer(){
 function startTimer(){
         let answer = confirm("Реклама исчезнет через 5 секунд, вы согласны ?", '');
         console.log(answer);
-            if (!!answer === true) {
+            if (answer) {
                 setTimeout(() => {alert('Реклама')           
                 }, 5000);
-            } else { 
-                if (!!answer === true) {setTimeout(() => {clearInterval(setInterval(startTimer(), 5000)), alert('Реклама')
-                }, 5000);}
-                return setInterval(startTimer(), 5000);
+            } else {setTimeout(() => startTimer(), 5000);
             }
-        };
+}
