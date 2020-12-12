@@ -13,17 +13,18 @@ let firstHouse = new HouseBuilder(3, 50, 1);
 let secondHouse = new HouseBuilder(5, 25, 2);
 
 
-
 //Task2
 //Создайте метод calcArea который будет возвращать суммарную площадь всех этажей дома. Данный метод занести в 
 //прототип конструктора. Вызвать данный метод на каждом созданном объекте и результат записать в поле totalArea 
 //каждого объекта.
       
 HouseBuilder.prototype.calcArea = function() {
-    return this.height * this.width * this.floors;
+    this.totalArea = this.height * this.width * this.floors;
+    return this.totalArea;
 }
-let totalAreaFirst = firstHouse.calcArea();
-let totalAreaSecond = secondHouse.calcArea();
+
+firstHouse.totalArea = firstHouse.calcArea();
+secondHouse.totalArea = secondHouse.calcArea();
 
 
 //Task3
@@ -41,7 +42,7 @@ let totalAreaSecond = secondHouse.calcArea();
 //	Будет ли такой код работать корректно? Если нет то используйте известные вам механизмы привязки чтобы решить эту задачу. 
      
 function askArea(result, resolve, reject) {
-    let area = result;
+    let area = result();
      	if (area >= "120") resolve();
     	else reject();
 }
@@ -54,6 +55,7 @@ HouseBuilder.prototype.checkAreaFail = function() {
 }
 
 //for firstHouse
-askArea(totalAreaFirst, firstHouse.checkAreaSuccessfully, firstHouse.checkAreaFail)()
+askArea(firstHouse.calcArea.bind(firstHouse), firstHouse.checkAreaSuccessfully.bind(firstHouse), firstHouse.checkAreaFail.bind(firstHouse))
+
 //for secondHouse
-askArea(totalAreaSecond, secondHouse.checkAreaSuccessfully, secondHouse.checkAreaFail)()
+askArea(secondHouse.calcArea.bind(secondHouse), secondHouse.checkAreaSuccessfully.bind(secondHouse), secondHouse.checkAreaFail.bind(secondHouse))
