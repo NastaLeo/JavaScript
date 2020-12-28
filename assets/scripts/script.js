@@ -36,16 +36,3 @@ setInterval(() => {liEven.forEach(el => el.style.color === 'red' ? el.style.colo
 
 setInterval(() => {liOdd.forEach(el => el.style.color === 'blue' ? el.style.color = 'red' : el.style.color = 'blue')
 }, 2000);
-
-
-// setInterval(() => {if (liOdd[0].style.color === 'blue') {
-//     liOdd[0].style.color = 'red';
-//     } else {liOdd[0].style.color = 'blue';
-//     }
-// }, 2000);
-
-// setInterval(() => {if (liOdd[1].style.color === 'blue') {
-//     liOdd[1].style.color = 'red';
-//     } else {liOdd[1].style.color = 'blue';
-//     }
-// }, 2000);
