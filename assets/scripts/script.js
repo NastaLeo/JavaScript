@@ -33,15 +33,15 @@ liOdd[1].style.color = 'blue';
 //(вначале синий 2 секунды через 2 секунды красный, потом через 2 секунды опять синий и т.д.).
 //Для этого использовать setInterval. 	
 
-setInterval(() => {if (liEven[0].style.color === 'blue') {
-    liEven[0].style.color = 'red';
-    } else {liEven[0].style.color = 'blue';
+setInterval(() => {if (liEven[0].style.color === 'red') {
+    liEven[0].style.color = 'blue';
+    } else {liEven[0].style.color = 'red';
     }
 }, 2000);
 
-setInterval(() => {if (liEven[1].style.color === 'blue') {
-    liEven[1].style.color = 'red';
-    } else {liEven[1].style.color = 'blue';
+setInterval(() => {if (liEven[1].style.color === 'red') {
+    liEven[1].style.color = 'blue';
+    } else {liEven[1].style.color = 'red';
     }
 }, 2000);
 
