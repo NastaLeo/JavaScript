@@ -21,7 +21,6 @@ cleanRoom(5)
         console.log(`Уборка проведена успешно за ${result}  секунд`)
     )
 
-
 //Task2
 //Расширьте предыдущее задание так, чтобы при передаче в dirtyLevel > 10 вы спустя dirtyLevel * 1000 мс возвращали выполненный
 //с ошибкой промис. Для обработки неуспешной уборки в then используйте console.log(err). Где err это аргумент reject. 
@@ -79,9 +78,24 @@ function cleanRooms(dirtyLevel_1, dirtyLevel_2, dirtyLevel_3) {
 }
 
 cleanRooms(3, 11, 2);
-   
-    
 
+// async & await
+
+async function cleanRooms(dirtyLevel_1, dirtyLevel_2, dirtyLevel_3) {
+    try {
+        let result1 = await cleanRoom(dirtyLevel_1);
+        console.log(`Уборка проведена успешно за ${result1}  секунд`);
+        let result2 = await cleanRoom(dirtyLevel_2);
+        console.log(`Уборка проведена успешно за ${result2}  секунд`);
+        let result3 = await cleanRoom(dirtyLevel_3);
+        console.log(`Уборка проведена успешно за ${result3}  секунд`)
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+cleanRooms(3, 11, 2);
+   
 
 //Task4
 //Задача на повторение массивов. Дан массив строк (например ["str", "str1", "str2", "str", "str2", "str", "str3", "str1", "str4", "str4"]).
@@ -104,5 +118,5 @@ let obj = arr.reduce((acc, elem) => {
     return acc;
 }, {});
 
-Object.values(obj).sort();
-console.log(obj);
+let obj1 = Object.fromEntries(Object.entries(obj).sort((a, b) => b[1] - a[1]));
+console.log(obj1);
