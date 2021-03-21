@@ -147,11 +147,11 @@ function sortNewArr(arr){
 
         } 
         
-        if(arr[i].age < middle.age) {
+        if(arr[i].age > middle.age) {
 
             firstArr.push(arr[i]);
 
-        } else if (arr[i].age >= middle.age) {
+        } else if (arr[i].age <= middle.age) {
 
             secondArr.push(arr[i]);
 
