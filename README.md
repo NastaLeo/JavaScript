@@ -1,2 +1,2 @@
 # JavaScript
-TMS tasks
+TMS homework tasks
