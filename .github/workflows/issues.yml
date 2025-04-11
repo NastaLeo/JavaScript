@@ -1,0 +1,17 @@
+name: Fix Issue Name
+
+on:
+  issues:
+    types: [ opened, edited ]
+
+jobs:
+  check_and_update_title:
+    name: Check and Update Title
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Find and fix 'released on @beta' issues without 'released' label
+        id: find-issues
+        run: |
+          console.log('issue created');
