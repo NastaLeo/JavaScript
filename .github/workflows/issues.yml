@@ -10,8 +10,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-      - name: Find and fix 'released on @beta' issues without 'released' label
-        id: find-issues
-        run: |
-          console.log('issue created');
+      - name: Create Issue
+        run: echo "It is  ${{ github.event_name }} event";
