@@ -11,4 +11,4 @@ jobs:
 
     steps:
       - name: Create Issue
-        run: echo "It is  ${{ github.event_name }} event for issue #${{ github.event.issue.number }}. The issue title is: ${{ github.event.issue.title }";
+        run: echo "It is  ${{ github.event_name }} event for issue ${{ context.payload }} ${{context.issue}}";
