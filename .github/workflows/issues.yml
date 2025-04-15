@@ -12,4 +12,6 @@ jobs:
     steps:
       - name: Create Issue
         uses: actions/github-script@v7
-        run: echo "It is  ${{ github.event_name }} event for issue ${{ github.payload }} {{context}}";
+        with:
+          script: |
+            echo "It is  ${{ github.event_name }} event for issue ${{ github.payload }} {{context}}";
