@@ -2,7 +2,7 @@ name: Fix Issue Name
 
 on:
   issues:
-    types: [ opened ]
+    types: [ opened, edited ]
 
 jobs:
   check_and_update_title:
@@ -15,9 +15,8 @@ jobs:
         with:
           script: |
             const {title, number} = context.payload.issue;
-            console.log(title, number);
-            
-            const newTitle = title.includes(`[EAK-${number}]`) ? title : `[EAK-${number} ${title}`;
+            const EAK_Number = `[EAK-${number}]`;
+            const newTitle = title.includes(EAK_Number) ? title : EAK_Number + ` ${title.replace(/\[EAK-\d+\]\s*/, '')}`;
 
             if (newTitle !== title) {
               await github.rest.issues.update({
