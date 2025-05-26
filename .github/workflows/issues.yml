@@ -16,7 +16,7 @@ jobs:
           script: |
             const {title, number} = context.payload.issue;
             const EAK_Number = `[EAK-${number}]`;
-            const newTitle = EAK_Number + ` ${title.replace(/^\[EAK-\w+\]\s*/, '')}`;
+            const newTitle = EAK_Number + ` ${title.replace(/^\[.*?\]/, '')}`;
 
             if (newTitle !== title) {
               await github.rest.issues.update({
