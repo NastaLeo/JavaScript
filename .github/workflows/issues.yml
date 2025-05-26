@@ -2,7 +2,7 @@ name: Fix Issue Name
 
 on:
   issues:
-    types: [ opened, edited ]
+    types: [ opened ]
 
 jobs:
   check_and_update_title:
@@ -17,12 +17,13 @@ jobs:
             const {title, number} = context.payload.issue;
             console.log(title, number);
             
-            const newTitle = title.includes(`#${number}`) ? title : `${title} #${number}`;
+            const newTitle = title.includes(`[EAK-${number}]`) ? title : `[EAK-${number} ${title}`;
 
             if (newTitle !== title) {
               await github.rest.issues.update({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
                 title: newTitle
               });
             }
